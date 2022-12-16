@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>Console Readline</Title>
+            <Author>CephasPi</Author>
+            <Description>Creates property with OnPropertyChanged</Description>
+            <Shortcut>propchange</Shortcut>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal>
+                    <ID>myVar</ID>
+                    <ToolTip>Name for backend variable</ToolTip>
+                    <Default>myVar</Default>
+                </Literal>
+                <Literal>
+                    <ID>MyProperty</ID>
+                    <ToolTip>Name for public frontend variable/property</ToolTip>
+                    <Default>MyProperty</Default>
+                </Literal>
+            </Declarations>
+            <Code Language="CSharp">
+                <![CDATA[private int $myVar$;
+                public int $MyProperty$
+                {
+                    get
+                    {
+                        return $myVar$;
+                    }
+                    set
+                    {
+                        $myVar$=value;
+                        OnPropertyChanged(nameof($MyProperty$));
+                    }
+                }]]>
+            </Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>
